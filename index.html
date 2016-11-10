@@ -215,7 +215,39 @@
 		left: 42.8%;
 	}
 }
+.yellow {
+	background-color: yellow;
+	border: 1px solid #ddd;
+	color:black;
+}
+.red {
+	background-color: red;
+	border: 1px solid #ddd;
+	color:white;
+}
+.green {
+	background-color: green;
+	border: 1px solid #ddd;
+	color:white;
+}
 
+.yellow-hover:hover {
+	background-color: #888800;
+	border: 1px solid white;
+	color:black;
+}
+
+.red-hover:hover {
+	background-color: #880000;
+	border: 1px solid white;
+	color:white;
+}
+
+.green-hover:hover {
+	background-color: #006600;
+	border: 1px solid white;
+	color:white;
+}
 /**
  *  The following is not really needed in this case
  *  Only to demonstrate the usage of @media for large screens
@@ -228,7 +260,17 @@
     *width: 14.285714285714285714285714285714%;
   }
 }
+
+.modal-dialog {
+	top:50px;
+}
   </style>
+  <script type="text/javascript">
+	function changeRiskItem(name, description) {
+		document.getElementById("riskTitle").innerText = name;
+		document.getElementById("riskBody").innerText = description;
+	};
+  </script>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
@@ -249,7 +291,9 @@
         <li><a href="#solution">SOLUTION</a></li>
 
         <li><a href="#services">MFCD</a></li>
-
+		
+		<li><a href="#risk">RISK</a></li>
+		
         <li><a href="#portfolio">TEAM</a></li>
       </ul>
     </div>
@@ -284,10 +328,15 @@
       <h2>Our Goal:</h2><br>
       <h4><strong>Goal:</strong>  Provide a tool which extracts blackboard archives into an easily navigable set of HTML documents. </h4><br>
       <p><strong>The Current Process:</strong></p>
-      <img class="img-responsive slideanim" style="height: 21.8vh" src="./svg/manualFlow.svg"/>
+	  <div class="row">
+		<div class="col-lg-6"><img class="img-responsive slideanim" style="" src="./svg/manualFlow.svg"/></div>
+		<img class="img-responsive slideanim" src="./svg/Legend.svg"/>
+	  </div>
 	  <p><strong>Our Process:</strong></p>
-	  <img class="img-responsive slideanim" style="height: 21vh" src="./svg/automaticFlow.svg"/>
-    </div>
+	  <div class="row">
+	  <div class="col-lg-6"><img class="img-responsive slideanim" style="" src="./svg/automaticFlow.svg"/></div>
+	  </div>
+	</div>
   </div>
 </div>
 
@@ -296,13 +345,89 @@
   <h2>Major Functional Compnents</h2>
   <h4>How our solution works</h4>
   <br>
-  <div class="slideanim">
-    <img style="left: 17%; position:relative;" class="img-responsive"  src="./svg/majorComponents.svg" >
+  <div class="row slideanim">
+    <div class="col-lg-12"> <img style="" class="img-responsive center-block"  src="./svg/majorComponents.svg" > </div>
   </div>
 </div>
 
+<!-- Risk Matrix -->
+<div id="risk" class="container-fluid bg-grey">
+  <h2>Risk Matrix</h2>
+  <p>Click on a risk item to view more information.</p>
+  <table class="table">
+    <thead>
+      <tr>
+		<th>Impact / Probability</th>
+        <th>Very Low</th>
+        <th>Low</th>
+        <th>Medium</th>
+		<th>High</th>
+		<th>Very High</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+		<!-- Trigger the modal with a button -->
+		<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>onclick="changeRiskItem('','')-->
+        <td>Very High</td>
+        <td class="yellow yellow-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T2:Blackboard modifies its archive formatting','Blackboard may at some point use a new formatting for their archive files. We mitiagte the risk by supporting a specific version of blackboard and targeting that archival formatting.')">T2</td>
+		<td class="yellow"> </td>
+		<td class="red red-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('C2: University migrates to new learning management system','The university may migrate away from Blackboard. We mitigate this risk by targeting all Universities which use Blackboard, to ensure that we will not suffer from several changes.')">C2</td>
+		<td class="red"></td>
+		<td class="red"> </td>
+      </tr>
+      <tr>
+        <td>High</td>
+		<td class="yellow"> </td>
+        <td class="yellow"> </td>
+		<td class="yellow"> </td>
+		<td class="red"> </td>
+		<td class="red"> </td>
+      </tr>
+	  <tr>
+        <td>Medium</td>
+        <td class="green"> </td>
+        <td class="yellow yellow-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('C1: Customer dislikes UX or UI','The customer may not like a specific user interface or user experience. We will mitiagte this risk by creating a version with a graphical user interface, a command line interface, and possibly a web interface.')">C1</td>
+		<td class="yellow"> </td>
+		<td class="yellow"> </td>
+		<td class="red"> </td>
+      </tr>
+      <tr>
+        <td>Low</td>
+        <td class="green"> </td>
+        <td class="green"> </td>
+		<td class="yellow"> </td>
+		<td class="yellow"> </td>
+		<td class="yellow"> </td>
+      </tr>
+	  <tr>
+        <td>Very Low</td>
+        <td class="green green-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T1: Security permission issues','The user\'s privileges may not allow access to specific file locations we may try to use. Mitigated by allowing the user to select locations on their own, and by displaying instances of UnauthroizedAccessException to the user and directing the user to a system administrator.')">T1</td>
+        <td class="green"> </td>
+		<td class="green"> </td>
+		<td class="yellow"> </td>
+		<td class="yellow"> </td>
+      </tr>
+    </tbody>
+  </table>
+  <ul>
+	<li>
+		T1: Security permission issues
+	</li>
+	<li>
+		T2:Blackboard modifies its archive formatting
+	</li>
+	<li>
+		C1: Customer dislikes UX or UI
+	</li>
+	<li>
+		C2: University migrates to new learning management system
+	</li>
+  </ul>
+</div>
+
 <!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
+<div id="portfolio" class="container-fluid text-center">
   <h2>Our Team</h2><br>
   <h4>Mentor</h4>
   <div class="row text-center slideanim seven-cols">
@@ -370,138 +495,37 @@
 
 </div>
 
-<div id="services" class="container-fluid text-center">
+<div id="services" class="container-fluid text-center bg-grey">
   <h2>Our Documents</h2>
       <div class="item active">
         <h4>"Feasibility Presentation (November 3, 2016)"<br><a href="./pdf/410crystalFeasibility.pdf">View</a></span></h4>
       </div>
 </div>
 
-<!--
-<!-- Container (Pricing Section) --
-<div id="pricing" class="container-fluid">
-  <div class="text-center">
-    <h2>Pricing</h2>
-    <h4>Choose a payment plan that works for you</h4>
-  </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Basic</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>20</strong> Lorem</p>
-          <p><strong>15</strong> Ipsum</p>
-          <p><strong>5</strong> Dolor</p>
-          <p><strong>2</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$19</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
+<!-- Trigger the modal with a button -->
+<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title" id="riskTitle">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p id="riskBody">Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Pro</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>50</strong> Lorem</p>
-          <p><strong>25</strong> Ipsum</p>
-          <p><strong>10</strong> Dolor</p>
-          <p><strong>5</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$29</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Premium</h1>
-        </div>
-        <div class="panel-body">
-          <p><strong>100</strong> Lorem</p>
-          <p><strong>50</strong> Ipsum</p>
-          <p><strong>25</strong> Dolor</p>
-          <p><strong>10</strong> Sit</p>
-          <p><strong>Endless</strong> Amet</p>
-        </div>
-        <div class="panel-footer">
-          <h3>$49</h3>
-          <h4>per month</h4>
-          <button class="btn btn-lg">Sign Up</button>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>
 
-<!-- Container (Contact Section) --
-<div id="contact" class="container-fluid bg-grey">
-  <h2 class="text-center">CONTACT</h2>
-  <div class="row">
-    <div class="col-sm-5">
-      <p>Contact us and we'll get back to you within 24 hours.</p>
-      <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
-    </div>
-    <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="googleMap" style="height:400px;width:100%;"></div>
-
-<!-- Add Google Maps --
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<script>
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-
-function initialize() {
-var mapProp = {
-  center:myCenter,
-  zoom:12,
-  scrollwheel:false,
-  draggable:false,
-  mapTypeId:google.maps.MapTypeId.ROADMAP
-  };
-
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker = new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
-</script>
--->
 <footer class="container-fluid text-center bg-grey">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
