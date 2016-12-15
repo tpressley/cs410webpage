@@ -508,11 +508,11 @@ header {
 		<!-- Trigger the modal with a button -->
 		<!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>onclick="changeRiskItem('','')-->
         <td>Very High</td>
-        <td class="yellow yellow-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T2:Blackboard modifies its archive formatting','Blackboard may at some point use a new formatting for their archive files. We mitiagte the risk by supporting a specific version of blackboard and targeting that archival formatting.')">T2</td>
-		<td class="yellow red-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('C2: University migrates to new learning management system','The university may migrate away from Blackboard. We mitigate this risk by targeting all Universities which use Blackboard, to ensure that we will not suffer from several changes.')">C2</td>
-		<td class="red"> </td>
+        <td class="yellow yellow-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T2:Blackboard modifies its archive formatting','Blackboard may update the Blackboard Course Archive format within the next two years. If so, our application may lose functionality or not have functionality to support the latest Blackboard features. We can mitigate this risk by using good software development practices and object oriented design principles, which would make it simple to maintain and update our application as necessary.')">T2</td>
+		<td class="yellow"> </td>
+		<td class="red red-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('C2: University migrates to new learning management system','The university may migrate away from Blackboard. We mitigate this risk by targeting all Universities which use Blackboard, to ensure that we will not suffer from several changes.')">C2</td>
 		<td class="red"></td>
-		<td class="red"> </td>
+		<td class="red"></td>
       </tr>
       <tr>
         <td>High</td>
@@ -536,11 +536,11 @@ header {
         <td class="green"> </td>
 		<td class="yellow"> </td>
 		<td class="yellow"> </td>
-		<td class="yellow"> </td>
+		<td class="yellow yellow-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T3: Blackboard Modifies Archive Formatting within 2 Years','If Blackboard were to drastically change its archive formatting to completely move away from the IMS Course Cartridge format in a new update, our software would have to be updated. We can avoid this risk by supporting the latest version of Blackboard, and by utilising standard object oriented design principles.')">T3</td>
       </tr>
 	  <tr>
         <td>Very Low</td>
-        <td class="green green-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T1: Security permission issues','The user/'s privileges may not allow access to specific file locations we may try to use. Mitigated by allowing the user to select locations on their own, and by displaying instances of UnauthroizedAccessException to the user and directing the user to a system administrator.')">T1</td>
+        <td class="green green-hover" data-toggle="modal" data-target="#myModal" onclick="changeRiskItem('T1: Security permission issues','The user\'s privileges may not allow access to specific file locations we may try to use. Mitigated by allowing the user to select locations on their own, and by displaying instances of UnauthroizedAccessException to the user and directing the user to a system administrator.')">T1</td>
         <td class="green"> </td>
 		<td class="green"> </td>
 		<td class="yellow"> </td>
@@ -581,7 +581,7 @@ header {
     <div class="col-sm-3" style="margin-top:-39px;">
 	  <h4>Mentor</h4>
       <div class="thumbnail">
-        <img src="./img/developers/zeil.png" alt="Dr Zeil" width="400" height="300">
+        <img src="./img/developers/zeil.png" alt="Dr Zeil" width="400" height="300"/>
         <p><strong>Dr. Steven Zeil </strong></p>
         <p>Dr. Zeil is an Associate Professor at Old Dominion University. He Graduated from Ohio State University with a Ph. D. in Computer Science. He has completed extensive research in software testing, reliability measures, distance learning and digital libraries. </p>
       </div>
@@ -589,21 +589,21 @@ header {
   
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/tpres008.jpg" alt="Tristan Pressley" width="400" height="300">
+        <img src="./img/developers/tpres008.jpg" alt="Tristan Pressley" width="400" height="300"/>
         <p><strong>Tristan Pressley</strong></p>
         <p>I study Computer Science at Old Dominion University, expecting to graduate in spring 2017 with my bachelors degree. I work part time as an IT Co-op at Huntington Ingalls Industries, Newport News Shipbuilding. I focus mostly on .NET and web development. I hope to continue my employment at the shipyard after graduation. </p>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/atill008.jpg" alt="Austin Tillery" width="400px" height="300px">
+        <img src="./img/developers/atill008.jpg" alt="Austin Tillery" width="400px" height="300px"/>
         <p><strong>Austin Tillery</strong></p>
         <p>My name is Austin Tillery and I am studying Computer Science at Old Dominion University. I am currently a senior graduating in May 2017. I hope to become a software developer working on various programs and applications for mobile development. My hobbies include; programming, video gaming, and singing.</p>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/gatki001.png" alt="Grant Atkins" width="400" height="300">
+        <img src="./img/developers/gatki001.png" alt="Grant Atkins" width="400" height="300"/>
         <p><strong>Grant Atkins</strong></p>
         <p>Hello, my name is Grant Atkins and I am a senior Computer Science Student at ODU. I am currently in the linked bachelors to masters program with plans to get my masters a year after I graduate. I currently work at ODU as a research assistant, focusing mainly on iOS and web development both front-end and back-end. </p>
       </div>
@@ -612,28 +612,28 @@ header {
 	<div class="row text-center slideanim seven-cols">
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/devin.jpg" alt="Devin Haslam" width="400" height="300">
+        <img src="./img/developers/devin.jpg" alt="Devin Haslam" width="400" height="300"/>
         <p><strong>Devin Haslam</strong></p>
         <p>Hi, I am a Computer Science senior at Old Dominion University. Currently I am working as a research assistant designing algorithms in the bioinformatics field. I hope to graduate this Spring, but would like to continue studying as a graduate student. </p>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/merly.jpg" alt="Merly Mathis" width="400" height="300">
+        <img src="./img/developers/merly.jpg" alt="Merly Mathis" width="400" height="300"/>
         <p><strong>Merly Mathis</strong></p>
         <p>I am a Computer Science major at Old Dominion University. My graduation date is spring 2017. Currently I have a Co-op with Huntington Ingalls Industries in Newport News. During this semester I'll be working with the cyber security team at HII. After graduation, I hope to continue to apply my computer science skills in the area of Cyber Security. </p>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/dominic.png" alt="Dominic Nguyen" width="400" height="300">
+        <img src="./img/developers/dominic.png" alt="Dominic Nguyen" width="400" height="300"/>
         <p><strong>Dominic Nguyn</strong></p>
         <p>I have always been interested with technology which has aided my decision to major in Computer Science. I am currently working with the Systems Group at ODU. I am Vietnamese and enjoy playing sports, taking naps, and having a good time.</p>
       </div>
     </div>
     <div class="col-sm-3">
       <div class="thumbnail">
-        <img src="./img/developers/soffos.jpg" alt="Christopher Soffos" width="400" height="300">
+        <img src="./img/developers/soffos.jpg" alt="Christopher Soffos" width="400" height="300"/>
         <p><strong>Christopher Soffos</strong></p>
         <p>I am currently a Computer Science major at ODU, expected to graduate Spring 2017. I am currently employed full-time with the CS Systems Group as a Systems Engineer with a focus in Linux, Network, and Security administration.</p>
       </div>
@@ -663,7 +663,7 @@ header {
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
-    <!-- Modal content-->
+    <!-- Modal content-->	
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -684,7 +684,6 @@ header {
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Bootstrap Theme Made By <a href="http://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
 </footer>
 
 <script>
